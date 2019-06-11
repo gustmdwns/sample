@@ -1,7 +1,9 @@
 const express = require('express');
 const path = require('path');
 const app = express();
+
 app.use(express.static(path.join(__dirname, 'views')));
+
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'views', 'index.html'));
 });
@@ -45,6 +47,6 @@ app.get('/notice', (req, res) => {
 });
 
 app.use(express.static('public'));
-app.listen(8080, () => {
+app.listen(80, () => {
   console.log('Express App on port 8080!');
 });
